@@ -26,6 +26,3 @@
 
 /* Enable caps-lock LED */
 #define CAPS_LOCK_LED_INDEX 45
-
-/* Use a longer combo term for sanity reasons */
-#define COMBO_TERM 200
