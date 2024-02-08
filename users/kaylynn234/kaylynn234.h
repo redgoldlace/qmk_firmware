@@ -1,13 +1,32 @@
 #pragma once
 
 #include <quantum.h>
+#include <tap_hold.h>
+
+#ifdef TAP_DANCE_ENABLE
+enum kay_tap_dance_actions {
+    KAY_PT
+};
+
+tap_dance_action_t tap_dance_actions[] = {
+    [KAY_PT] = ACTION_TAP_DANCE_TAP_HOLD(LCMD(KC_SPC), KC_LCMD),
+};
+#endif
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+#ifdef TAP_DANCE_ENABLE
+    process_tap_hold(keycode, record, TD(KAY_PT));
+#endif
+
+    return true;
+}
 
 enum kay_layers{
     KAY_BASE,
     KAY_FN,
 };
 
-#if defined(COMBO_ENABLE)
+#ifdef COMBO_ENABLE
 enum kay_combos {
     COMBO_SKIP_LEFT,
     COMBO_SKIP_RIGHT,
