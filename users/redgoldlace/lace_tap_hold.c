@@ -1,6 +1,5 @@
-#ifdef TAP_DANCE_ENABLE
 #include <quantum.h>
-#include <tap_hold.h>
+#include <lace_tap_hold.h>
 
 void process_tap_hold(uint16_t keycode, keyrecord_t *record, uint16_t tap_hold_key) {
     if (keycode != TD(tap_hold_key)) {
@@ -55,4 +54,3 @@ void tap_hold_reset(tap_dance_state_t *state, void *user_data) {
     unregister_code16(active_key);
     info->active = TAP_HOLD_NONE;
 }
-#endif // TAP_DANCE_ENABLE

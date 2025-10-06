@@ -1,11 +1,11 @@
 # LuminKey75
 
-![LuminKey75](imgur.com image replace me!)
+![LuminKey75 V1](imgur.com image replace me!)
 
 *A short description of the keyboard/project*
 
-* Keyboard Maintainer: [Kaylynn Morgan](https://github.com/kaylynn234)
-* Hardware Supported: LuminKey75, wired PCB
+* Keyboard Maintainer: [Lace System](https://github.com/redgoldlace)
+* Hardware Supported: LuminKey75 V1, wired PCB
 * Hardware Availability: [CreateKeebs](https://createkeebs.com/products/createkeebs-luminkey75-custom-hot-swappable-mechanical-keyboard)
 
 Make example for this keyboard (after setting up your build environment):

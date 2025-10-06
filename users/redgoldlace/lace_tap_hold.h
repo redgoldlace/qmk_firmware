@@ -17,7 +17,6 @@ typedef struct {
     tap_hold_active_t active;
 } tap_hold_info_t;
 
-
 void process_tap_hold(uint16_t keycode, keyrecord_t *record, uint16_t tap_hold_key);
 void tap_hold_finished(tap_dance_state_t *state, void *user_data);
 void tap_hold_reset(tap_dance_state_t *state, void *user_data);
@@ -27,4 +26,4 @@ void tap_hold_reset(tap_dance_state_t *state, void *user_data);
     .fn = {NULL, tap_hold_finished, tap_hold_reset}, \
     .user_data = (void *)&(TAP_HOLD(tap, hold)), \
 }
-#endif // TAP_DANCE_ENABLE
+#endif
