@@ -1,30 +1,17 @@
 #pragma once
 
 #include <quantum.h>
-#include <tap_hold.h>
+#include <lace_tap_hold.h>
 
 #ifdef TAP_DANCE_ENABLE
-enum kay_tap_dance_actions {
-    KAY_PT
+enum lace_tap_dance_actions {
+    LACE_S
 };
 
 tap_dance_action_t tap_dance_actions[] = {
-    [KAY_PT] = ACTION_TAP_DANCE_TAP_HOLD(LCMD(KC_SPC), KC_LCMD),
+    [LACE_S] = ACTION_TAP_DANCE_TAP_HOLD(LCMD(KC_SPC), KC_LCMD),
 };
 #endif
-
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-#ifdef TAP_DANCE_ENABLE
-    process_tap_hold(keycode, record, TD(KAY_PT));
-#endif
-
-    return true;
-}
-
-enum kay_layers{
-    KAY_BASE,
-    KAY_FN,
-};
 
 #ifdef COMBO_ENABLE
 enum kay_combos {
@@ -70,3 +57,16 @@ combo_t key_combos[] = {
     [COMBO_NUMPAD_9] = COMBO(combo_numpad_9, KC_KP_9),
 };
 #endif // COMBO_ENABLE
+
+bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+#ifdef TAP_DANCE_ENABLE
+    process_tap_hold(keycode, record, TD(LACE_S));
+#endif
+
+    return true;
+}
+
+enum lace_layers{
+    LACE_BASE,
+    LACE_FN,
+};
